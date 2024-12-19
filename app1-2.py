@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import urllib.request
 
 st.title("강아지 사료 선택 서비스")
 st.header("강아지 정보 입력")
@@ -37,10 +38,14 @@ disease_category_mapping = {
 }
 selected_diseases = st.multiselect("강아지가 앓고 있는 질병을 선택하세요 (여러 개 선택 가능)", diseases)
 
-df_nut = pd.read_excel('영양제_영양성분_수정.xlsx')
+url = 'https://raw.githubusercontent.com/amstronging/gonzo/main/영양제_영양성분_수정.xlsx'
+# 파일 읽기
+df_nut = pd.read_excel(url)
 
 
-df_food = pd.read_excel('강아지사료2.xlsx')
+url2 = 'https://raw.githubusercontent.com/amstronging/gonzo/main/강아지사료2.xlsx'
+
+df_food = pd.read_excel(url2)
 
 # 공백 제거 및 데이터 정리
 df_food.columns = df_food.columns.str.strip()
