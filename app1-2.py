@@ -38,12 +38,12 @@ disease_category_mapping = {
 }
 selected_diseases = st.multiselect("강아지가 앓고 있는 질병을 선택하세요 (여러 개 선택 가능)", diseases)
 
-url = 'https://raw.githubusercontent.com/amstronging/gonzo/main/영양제_영양성분_수정.xlsx'
+url = 'https://raw.githubusercontent.com/amstronging/gonzo/main/nutrition.xlsx'
 # 파일 읽기
 df_nut = pd.read_excel(url)
 
 
-url2 = 'https://raw.githubusercontent.com/amstronging/gonzo/main/강아지사료2.xlsx'
+url2 = 'https://raw.githubusercontent.com/amstronging/gonzo/main/dog_food.xlsx'
 
 df_food = pd.read_excel(url2)
 
