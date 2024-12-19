@@ -4,6 +4,10 @@ import pandas as pd
 st.title("강아지 사료 선택 서비스")
 st.header("강아지 정보 입력")
 
+import os
+st.write(os.getcwd())  # 현재 작업 디렉터리 출력
+
+
 age = st.number_input("강아지 나이 (개월수)", min_value=1, max_value=240, value=12, step=1)
 weight = st.number_input("강아지 체중 (kg)", min_value=0.1, max_value=100.0, value=10.0)
 activity_level = st.selectbox("활동량을 선택하세요", ["활동이 적음", "적당히 활동적", "매우 활동적"])
